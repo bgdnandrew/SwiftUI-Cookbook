@@ -54,6 +54,8 @@ struct InputTodoView: View {
             Spacer()
             Button {
                 // PLACEHOLDER for the actual action the button is supposed to execute
+                todos.append(Todo(descritpion: newTodoDescription, done: false))
+                newTodoDescritpion = ""
             } label: {
                 Text("Add")
                     .padding(.horizontal, 16)
@@ -63,6 +65,7 @@ struct InputTodoView: View {
                     .cornerRadius(5)
 
                 }
+                .disabled(newTodoDescription.isEmpty)
          }
          .frame(height: 60)
          .padding(.horiontal, 24)
